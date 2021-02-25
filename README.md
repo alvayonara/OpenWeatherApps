@@ -12,3 +12,7 @@ Tech Stack used
 * Moshi
 * Timber
 * Karumi Dexter
+
+App Preview
+---------
+<img src="https://github.com/alvayonara/OpenWeatherApps/blob/main/app-preview.jpeg" width="200" height="400"/>

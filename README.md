@@ -6,6 +6,7 @@ Tech Stack used
 * Kotlin
 * MVVM pattern
 * Clean Architecture
+* Dagger Hilt
 * Coroutines Flow
 * Room
 * Retrofit

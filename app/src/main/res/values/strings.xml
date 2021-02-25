@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">OpenWeatherApps</string>
+    <string name="sunrise">Sunrise</string>
+    <string name="sunset">Sunset</string>
+    <string name="wind">Wind</string>
+    <string name="pressure">Pressure</string>
+    <string name="created_by">Created by</string>
+    <string name="creator_app">Alva Y.P</string>
+    <string name="humidity">Humidity</string>
+
+    <string name="request_permission">Allow Request</string>
+    <string name="request_permission_1">Allow OpenWeatherApp to access this devices Location?</string>
+    <string name="request_permission_2">Allow</string>
+    <string name="request_permission_3">Deny</string>
 </resources>

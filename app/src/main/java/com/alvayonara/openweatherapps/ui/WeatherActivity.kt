@@ -98,6 +98,7 @@ class WeatherActivity : BaseActivity<ActivityWeatherBinding>(),
                 is Resource.Loading -> binding.progressBar.visible()
                 is Resource.Success -> {
                     binding.progressBar.gone()
+                    setLog(it.data.toString())
                     populateWeatherData(it.data)
                 }
                 is Resource.Error -> {

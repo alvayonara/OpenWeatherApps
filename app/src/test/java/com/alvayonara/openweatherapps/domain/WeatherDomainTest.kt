@@ -4,6 +4,7 @@ import com.alvayonara.openweatherapps.core.domain.model.Weather
 import com.alvayonara.openweatherapps.core.domain.repository.IWeatherRepository
 import com.alvayonara.openweatherapps.core.domain.usecase.WeatherInteractor
 import com.alvayonara.openweatherapps.core.domain.usecase.WeatherUseCase
+import com.alvayonara.openweatherapps.core.utils.DataDummy
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.verifyNoMoreInteractions
@@ -16,14 +17,7 @@ class WeatherDomainTest {
 
     private val weatherRepository: IWeatherRepository = mock()
 
-    private val latitude = "-6.110252694250743"
-    private val longitude = "106.14598877728035"
-    private val weather = Weather(
-        lat = latitude,
-        long = longitude,
-        isSwipeRefreshed = true,
-        isNetworkAvailable = true
-    )
+    private val weather = DataDummy.dummyWeather()
 
     @Before
     fun setUp() {

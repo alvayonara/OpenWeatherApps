@@ -2,8 +2,8 @@ package com.alvayonara.openweatherapps.ui
 
 import com.alvayonara.openweatherapps.core.data.source.Resource
 import com.alvayonara.openweatherapps.core.data.source.local.entity.DataEntity
-import com.alvayonara.openweatherapps.core.domain.model.Weather
 import com.alvayonara.openweatherapps.core.domain.usecase.WeatherUseCase
+import com.alvayonara.openweatherapps.core.utils.DataDummy
 import com.alvayonara.openweatherapps.utils.BaseUnitTest
 import com.alvayonara.openweatherapps.utils.getValueForTest
 import com.nhaarman.mockitokotlin2.mock
@@ -25,14 +25,8 @@ class WeatherViewModelTest : BaseUnitTest() {
 
     private val weatherUseCase: WeatherUseCase = mock()
     private val weathers = mock<DataEntity>()
-    private val latitude = "-6.110252694250743"
-    private val longitude = "106.14598877728035"
-    private val weather = Weather(
-        lat = latitude,
-        long = longitude,
-        isSwipeRefreshed = true,
-        isNetworkAvailable = true
-    )
+
+    private val weather = DataDummy.dummyWeather()
 
     private val expected = Resource.Success(weathers)
 

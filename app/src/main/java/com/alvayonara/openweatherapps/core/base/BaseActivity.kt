@@ -1,4 +1,4 @@
-package com.alvayonara.openweatherapps.ui
+package com.alvayonara.openweatherapps.core.base
 
 import android.content.Context
 import android.content.Intent
@@ -12,6 +12,7 @@ import android.provider.Settings
 import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.LiveData
 import androidx.viewbinding.ViewBinding
 import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.WhichButton
@@ -44,6 +45,9 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
     }
 
     abstract fun setup()
+
+    protected open fun setupView() {}
+    protected open fun subscribeViewModel() {}
 
     protected fun showToast(message: String) =
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
@@ -134,8 +138,14 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
         return false
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
+    protected fun <T> LiveData<T>.onLiveDataResult(action: (T) -> Unit) {
+        observe(this@BaseActivity) { data ->
+            data?.let(action)
+        }
     }
+
+//    override fun onDestroy() {
+//        super.onDestroy()
+//        _binding = null
+//    }
 }

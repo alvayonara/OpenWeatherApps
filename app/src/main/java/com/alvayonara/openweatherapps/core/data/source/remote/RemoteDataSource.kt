@@ -5,6 +5,7 @@ import com.alvayonara.openweatherapps.BuildConfig
 import com.alvayonara.openweatherapps.core.data.source.remote.network.ApiResponse
 import com.alvayonara.openweatherapps.core.data.source.remote.network.ApiService
 import com.alvayonara.openweatherapps.core.data.source.remote.response.DataResponse
+import com.alvayonara.openweatherapps.core.domain.model.Weather
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -17,9 +18,9 @@ import javax.inject.Singleton
 class RemoteDataSource @Inject constructor(private val apiService: ApiService) {
 
     @SuppressLint("CheckResult")
-    suspend fun getWeather(lat: String, long: String): Flow<ApiResponse<DataResponse>> = flow {
+    suspend fun getWeather(weather: Weather): Flow<ApiResponse<DataResponse>> = flow {
         try {
-            val response = apiService.getWeather(lat, long, BuildConfig.API_KEY)
+            val response = apiService.getWeather(weather.lat, weather.long)
             emit(ApiResponse.Success(response))
         } catch (e: Exception) {
             emit(ApiResponse.Error(e.toString()))

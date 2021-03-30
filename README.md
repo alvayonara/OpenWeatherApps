@@ -3,6 +3,10 @@
 <p align="center">
   <img src="https://github.com/alvayonara/OpenWeatherApps/blob/main/image/app-icon.png" width="20%"></img>
 </p>
+<p align="center">
+<img alt="api" src="https://img.shields.io/badge/API-24%2B-green?logo=android"/>
+<img alt="license" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg"/>
+</p>
 <p align="center">OpenWeatherApps for Android.</p>
 
 ## Stack and Libraries

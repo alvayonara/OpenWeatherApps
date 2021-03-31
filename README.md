@@ -33,7 +33,7 @@
 ## App Preview
 <img src="https://github.com/alvayonara/OpenWeatherApps/blob/main/image/app-preview.jpeg" width="20%"/>
 
-## 📝 License
+## License
 
 ```
 Copyright 2021 Alva Yonara Puramandya
